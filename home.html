@@ -348,7 +348,6 @@
           flex-direction: column;
           gap: 1rem;
           align-items: center;
-          justify-content: center; /* ✅ STRICTLY ADDED AS INSTRUCTED */
           margin-top: 1rem;
           width: 100%;
           padding: 0;
@@ -414,9 +413,105 @@
       <a href="index.html">Start Scanning</a>
     </section>
 
-    <!-- Rest of your body content stays same (not shown here due to size) -->
+    <section class="get-started-section">
+      <h2>Get Started Now</h2>
+      <p>
+        Ready to begin your sustainability journey? Click below to explore how
+        your daily choices impact the planet and start earning eco-points today!
+      </p>
+      <a href="rewards.html">Get Started</a>
+    </section>
 
-    <!-- Scripts same -->
+    <section class="how-section">
+      <h2>How It Works</h2>
+      <div class="how-cards">
+        <div class="green-card">
+          <div>📸</div>
+          <h3>1. Scan Product</h3>
+          <p>
+            Point your camera and capture the product to get details instantly.
+          </p>
+        </div>
+        <div class="green-card">
+          <div>📊</div>
+          <h3>2. Analyze Impact</h3>
+          <p>
+            Get real-time insights like carbon emissions & sustainability score.
+          </p>
+        </div>
+        <div class="green-card">
+          <div>🏆</div>
+          <h3>3. Earn Rewards</h3>
+          <p>Track your green actions and earn eco-points and badges.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2>About GreenScan</h2>
+      <p>
+        GreenScan is on a mission to make sustainability simple, accessible, and
+        rewarding. We empower conscious consumers by providing instant
+        environmental insights for everyday products.<br /><br />
+        Our platform analyzes items in real-time to reveal their carbon
+        footprint, sustainability scores, and overall eco-impact—helping you
+        shop smarter and greener.<br /><br />
+        Whether you're reducing waste, tracking emissions, or just starting
+        out—GreenScan makes your green journey effortless and rewarding.
+      </p>
+    </section>
+
+    <div class="login-btn-bottom">
+      <button onclick="openLogin()">Open Login / Signup</button>
+    </div>
+
+    <div id="loginModal" onclick="closeModal()">
+      <div onclick="event.stopPropagation()" class="modal-content">
+        <span
+          onclick="closeModal()"
+          style="
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+          "
+          >&times;</span
+        >
+        <div id="loginForm" style="display: block;">
+          <h3 style="color: #2e7d32;">Login</h3>
+          <input id="loginEmail" type="email" placeholder="Email" />
+          <input id="loginPassword" type="password" placeholder="Password" />
+          <button onclick="handleLogin()">Login</button>
+          <p id="loginError" style="color: red;"></p>
+          <p style="text-align: center;">
+            Don't have an account?
+            <a href="#" onclick="showTab('signup')">Sign Up</a>
+          </p>
+        </div>
+        <div id="signupForm" style="display: none;">
+          <h3 style="color: #2e7d32;">Sign Up</h3>
+          <input id="signupEmail" type="email" placeholder="Email" />
+          <input
+            id="signupPassword"
+            type="password"
+            placeholder="Password (min 6 chars)"
+          />
+          <button onclick="handleSignup()">Sign Up</button>
+          <p id="signupError" style="color: red;"></p>
+          <p style="text-align: center;">
+            Already have an account?
+            <a href="#" onclick="showTab('login')">Login</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      © 2025 GreenScan. All rights reserved.
+    </footer>
+
     <script>
       function openLogin() {
         document.getElementById("loginModal").style.display = "flex";
